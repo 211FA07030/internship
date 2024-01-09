@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This web application provides a simple and intuitive interface for converting temperatures between Celsius and Fahrenheit. Whether you need quick temperature conversions for cooking, weather analysis, or any other purpose, this tool has got you covered."
+    />
+
+    <meta name="keywords" content="Temperature Converter,celsius to fahrenheit,Online Temperature Converter,fahrenheit to celsius, Free Temperature Conversion,how to fahrenheit to celsius, how to convert celsius to fahrenheit">
+
+  <title>Temperature Convertor</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Temperature Converter" />
+    <meta property="og:site_name" content="Temperature Converter" />
+    <meta
+      property="og:url"
+      content="https://neel-07.github.io/Temperature-Converter/"
+    />
+    <meta
+      property="og:description"
+      content="This web application provides a simple and intuitive interface for converting temperatures between Celsius and Fahrenheit. Whether you need quick temperature conversions for cooking, weather analysis, or any other purpose, this tool has got you covered."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://i.postimg.cc/pVgKKQPX/temp.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yourTwitterHandle" />
+    <meta name="twitter:title" content="Temperature Converter" />
+    <meta
+      name="twitter:description"
+      content="This web application provides a simple and intuitive interface for converting temperatures between Celsius and Fahrenheit. Whether you need quick temperature conversions for cooking, weather analysis, or any other purpose, this tool has got you covered."
+    />
+    <meta
+      name="twitter:image"
+      content="https://i.postimg.cc/pVgKKQPX/temp.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Added CDN for tour guide -->
+    <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/intro.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css"
+    />
+
+    <!-- Added CDN for font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Added CDN for Tooltip -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+
+
+    <!--Contact-Us-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />       
+
+  </head>
+
+  <body>
+    <nav class="navbar nav">
+      <div class="header">
+        <h1>Temperature Converter</h1>
+        <span class="temperature-icon"
+          ><i class="fas fa-temperature-high"></i
+        ></span>
+      </div>
+
+      <div class="start-tour-button">
+        <!-- <button>Get Started</button> -->
+        <button class="cssbuttons-io-button" id="startTourButton">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+
+    </nav>
+
+    <div class="containers">
+      <div
+        class="temperature-input"
+        id="celsius"
+        data-step="1"
+        data-intro="Hello"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Convert Celsius Here"
+      >
+        <input type="number" id="celsiusInput" placeholder="Celsius" />
+        <span class="unit">°C</span>
+      </div>
+      <div
+        class="temperature-input"
+        id="fahrenheit"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Convert Fahrenheit Here"
+      >
+        <input type="number" id="fahrenheitInput" placeholder="Fahrenheit" />
+        <span class="unit">°F</span>
+      </div>
+      <div
+        class="temperature-input"
+        id="kelvin"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Convert Kelvin Here"
+      >
+        <input type="number" id="kelvinInput" placeholder="Kelvin" />
+        <span class="unit">K</span>
+      </div>
+
+      <div class="button">
+        <button class="Btn" id="clearButton">
+          <span>Clear All</span>
+          <i class="fa-solid fa-broom"></i>
+        </button>
+
+        <!-- <button class="button"></button> -->
+      </div>
+    </div>
+
+    <section class="footer">
+      <div class="footer-content">
+        <h2>Temperature Converter</h2>
+        <p class="footer-para">
+          Simplify temperature conversions with our user-friendly tool. Quickly
+          switch between Celsius, Fahrenheit, and Kelvin using HTML, CSS, and
+          JavaScript. Stay connected for more updates! 🌡️🔥❄️
+        </p>
+      </div>
+
+      <div class="container">
+       <!-- Contact us form -->
+       <div class="contact-us">
+        <center>
+          
+            <button class="btn btn-outline-secondary btn-lg" type="button" data-toggle="collapse"
+                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+                id="button-contact"  onclick="toggleContactForm()">
+                <div class="contact-btn-text" id="contact">
+                    Contact Us
+                </div>
+            </button>
+
+            <div class="collapse" id="collapseExample">
+                <div class="card-card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm" id="contact-form-text">
+                                <h1> Contact Us </h1>
+                                <p>
+                                  Share your temperature conversion needs with us, and we'll provide accurate solutions. Our expert team ensures precise conversions to meet your requirements
+                                </p>
+                            </div>
+
+
+                            <div class="col-sm" id="contact-options">
+                                <form name="contact_form" id="contact" method="post"
+                                    onsubmit="mailto(event)">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name"
+                                            name="contact_name" placeholder="Enter your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="placename">Feedback/Query/Suggestion</label>
+                                        <input type="text" class="form-control" id="placename"
+                                            name="contact_place" placeholder="Enter your feedback/query/suggestion ">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"
+                                        id="button-contact">Submit</button>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+        </center>
+    </div>
+  </div>
+    <!-- Contact us form -->
+
+      <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-snapchat"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="color: #14b383;"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      
+      <hr />
+      <p class="copyright-heading">Made with ❤️</p>
+      <div class="visitor-counter">
+        📊 Visitor Counter
+        <a href="https://www.freecounterstat.com" title="website view counter"><img style="width: 90px;" src="https://counter6.optistats.ovh/private/freecounterstat.php?c=md46zrwxzylj8wbjpa94hdbhqe2kzy49" border="0" title="website view counter" alt="website view counter"></a>
+      </div>
+      <p class="copyright">&copy; 2023 - Temperature Converter</p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+<style>
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: 'Chakra Petch', sans-serif;;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+.nav{
+  display: flex !important;
+  justify-content: space-between !important;;
+  align-items: center !important;;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.temperature-icon i {
+  font-size: 2rem;
+  margin-left: 15px;
+}
+
+/* Body Styles */
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to top, #173bca, #80d0c7);
+}
+
+/* Container Styles */
+.containers {
+  max-width: 450px;
+  width: 98%;
+  height: auto;
+  margin: 20px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px 3px rgba(0, 0, 0, 0.4);
+  font-family: sans-serif;
+  padding: 75px 68px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Styles */
+.temperature-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.temperature-input input {
+  flex: 5;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 8px 0 0 8px;
+  padding: 0 10px;
+}
+
+.temperature-input .unit {
+  flex: 1;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 5px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background: #0093e9;
+  color: #fff;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Button Styles */
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: #2e2c2c;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  width: 100%;
+}
+
+.footer .footer-content {
+  padding: 1rem 1rem 1rem 0rem;
+}
+
+.footer h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.footer-para {
+  padding: 0px;
+  font-size: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  text-align: justify;
+}
+
+.footer .social {
+  padding: 0.8rem 0;
+  text-align: center;
+  color: #646566;
+  background-color: #2e2c2c;
+}
+
+.footer .social a {
+  font-size: 25px;
+  color: inherit;
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  opacity: 0.75;
+  color: #06e6a6;
+  transition: box-shadow 0.3s ease-in-out;  /* Add a smooth transition */
+}
+
+.footer .social a:hover {
+  opacity: 0.9;
+  background-color: #474b4b;
+}
+
+/*Contact-Us*/
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+a {
+  color: white;
+}
+
+.contact-us {
+  display: block;
+  align-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+#button-contact {
+  display: block;
+  position: static;
+  width: fit-content;
+  margin-bottom: 4%;
+ 
+}
+
+.contact-btn-text {
+  vertical-align: middle;
+}
+
+.card-card-body {
+  color: white;
+}
+
+#contact-form-text {
+  margin-left: 3%;
+  text-align: left;
+  margin-right: 14%;
+}
+
+#contact-options {
+  margin-left: 3%;
+  text-align: left;
+  margin-right: 14%;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #f6ecec;
+}
+
+.copyright-heading {
+  text-align: center;
+  font-size: 20px;
+  color: #f5efef;
+}
+
+/* Tour Button Css */
+.cssbuttons-io-button {
+  background: #34a0b0;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  margin: auto 20px;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #4d91a6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em !important;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #0f2ec8;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+/* Clear all button */
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 40px;
+  border: none;
+  padding: 0px 10px;
+  background-color: rgb(83, 223, 255);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px rgb(32, 62, 212);
+  transition-duration: 0.3s;
+}
+
+.fa-broom {
+  width: 10px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover span {
+  color: transparent;
+}
+
+.Btn:hover .fa-broom {
+  right: 43%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+.Btn:active {
+  transform: translate(3px, 3px);
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 0px rgb(140, 32, 212);
+}
+
+/* For devices with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  .containers {
+    width: 80%;
+  }
+
+  .temperature-input input {
+    width: 80%;
+  }
+  .nav{
+    justify-content: center !important;
+  }
+}
+
+/* For devices with a maximum width of 576px */
+@media only screen and (max-width: 576px) {
+  .containers {
+    width: 90%;
+    padding: 14px;
+    margin: 10px;
+  }
+
+  .start-tour-button {
+    scale: 0.6;
+    margin-top: -13px;
+    margin-bottom: -13px;
+  }
+
+  .footer {
+    height: 30%;
+  }
+
+  .footer-para {
+    font-size: 0.9rem;
+    padding: 7px;
+  }
+
+  .footer .footer-content {
+    padding: 9px;
+    /* margin: -4px; */
+  }
+
+  .temperature-input input {
+    width: 90%;
+  }
+  .nav {
+          justify-content: center !important;
+  }
+    #button-contact {
+      width: 115;
+     height: 40px;
+  }
+    .contact-btn-text{
+      font-size: 16px;
+    }
+    #contact-form-text h1{
+      font-size: 1.5rem;
+    }
+}
+
+.social a:hover i{
+    font-size: 26px; 
+}
+
+.social a:hover{
+    box-shadow: 0 0 10px rgba(55, 191, 164, 0.7); /* Apply a shadow on hover */
+}
+</style>
+
+<script>
+let celsiusInput = document.querySelector("#celsiusInput");
+let fahrenheitInput = document.querySelector("#fahrenheitInput");
+let kelvinInput = document.querySelector("#kelvinInput");
+let clearButton = document.querySelector("#clearButton");
+
+function roundNumber(number) {
+  return Math.round(number * 100) / 100;
+}
+
+function convertTemperatures() {
+  let cTemp = parseFloat(celsiusInput.value);
+  let fTemp = (cTemp * 9) / 5 + 32;
+  let kTemp = cTemp + 273.15;
+
+  fahrenheitInput.value = roundNumber(fTemp);
+  kelvinInput.value = roundNumber(kTemp);
+}
+
+celsiusInput.addEventListener("input", convertTemperatures);
+fahrenheitInput.addEventListener("input", function () {
+  let fTemp = parseFloat(fahrenheitInput.value);
+  let cTemp = ((fTemp - 32) * 5) / 9;
+  let kTemp = ((fTemp - 32) * 5) / 9 + 273.15;
+
+  celsiusInput.value = roundNumber(cTemp);
+  kelvinInput.value = roundNumber(kTemp);
+});
+kelvinInput.addEventListener("input", function () {
+  let kTemp = parseFloat(kelvinInput.value);
+  let cTemp = kTemp - 273.15;
+  let fTemp = ((kTemp - 273.15) * 9) / 5 + 32;
+
+  celsiusInput.value = roundNumber(cTemp);
+  fahrenheitInput.value = roundNumber(fTemp);
+
+  let cTemp2 = parseFloat(celsiusInput.value);
+  if (!isNaN(cTemp)) {
+    let fTemp = (cTemp * 9) / 5 + 32;
+    let kTemp = cTemp2 + 273.15;
+
+    fahrenheitInput.value = roundNumber(fTemp);
+    kelvinInput.value = roundNumber(kTemp);
+  } else {
+    if (celsiusInput.value === "")
+      alert("Please enter a valid numerical value");
+    celsiusInput.value = "";
+    fahrenheitInput.value = "";
+    kelvinInput.value = "";
+  }
+});
+
+celsiusInput.addEventListener("input", convertTemperatures);
+
+fahrenheitInput.addEventListener("input", function () {
+  let fTemp = parseFloat(fahrenheitInput.value);
+  if (!isNaN(fTemp)) {
+    let cTemp = ((fTemp - 32) * 5) / 9;
+    let kTemp = ((fTemp - 32) * 5) / 9 + 273.15;
+
+    celsiusInput.value = roundNumber(cTemp);
+    kelvinInput.value = roundNumber(kTemp);
+  } else {
+    if (fahrenheitInput.value !== "")
+      alert("Please enter a valid numerical value");
+    celsiusInput.value = "";
+    fahrenheitInput.value = "";
+    kelvinInput.value = "";
+  }
+});
+kelvinInput.addEventListener("input", function () {
+  let kTemp = parseFloat(kelvinInput.value);
+  if (!isNaN(kTemp)) {
+    let cTemp = kTemp - 273.15;
+    let fTemp = ((kTemp - 273.15) * 9) / 5 + 32;
+
+    celsiusInput.value = roundNumber(cTemp);
+    fahrenheitInput.value = roundNumber(fTemp);
+  } else {
+    if (fahrenheitInput.value !== "")
+      alert("Please enter a valid numerical value");
+    celsiusInput.value = "";
+    fahrenheitInput.value = "";
+    kelvinInput.value = "";
+  }
+});
+
+clearButton.addEventListener("click", function () {
+  celsiusInput.value = "";
+  fahrenheitInput.value = "";
+  kelvinInput.value = "";
+});
+
+// Add a function to start the tour when the "Start Tour" button is clicked
+document
+  .getElementById("startTourButton")
+  .addEventListener("click", function () {
+    introJs()
+      .setOptions({
+        steps: [
+          {
+            element: document.getElementById("celsius"),
+            intro: "Enter a temperature in Celsius here.",
+          },
+          {
+            element: document.getElementById("fahrenheit"),
+            intro: "Enter a temperature in Fahrenheit here.",
+          },
+          {
+            element: document.getElementById("kelvin"),
+            intro: "Enter a temperature in Kelvin here.",
+          },
+          {
+            element: document.getElementById("clearButton"),
+            intro: "Click this button to clear all inputs.",
+          },
+        ],
+      })
+      .start();
+  });
+
+// For tooltip
+
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+
+
+//For ConactUs
+function toggleContactForm() {
+  var contactForm = document.getElementById("collapseExample");
+  if (contactForm) {
+      contactForm.classList.toggle("show");
+  }
+}
+
+function mailto(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const object = {};
+    data.forEach((value, key) => (object[key] = value));
+
+    var name = object["contact_name"];
+    var place = object["contact_place"];
+    var email = "neelmishra9125@gmail.com";
+
+    var subject = `Name: ${name} and Place: ${place}`;
+    var encodedSubject = encodeURI(subject);
+    var mailto_link = "mailto:" + email + `?subject=${encodedSubject}`;
+
+    window.location.href = mailto_link;
+    
+    document.getElementById("contact").reset();
+}
+
+document.getElementById('next').onclick = function(){
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').appendChild(lists[0]);
+}
+document.getElementById('prev').onclick = function(){
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').prepend(lists[lists.length - 1]);
+}
+  
+</script>
